@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "server": "json-server -p 3001 db.json",
     "start": "node server.js",
+    "start:prod": "npm run build && node server.js",
     "dev:server": "node --watch server.js",
     "build:full": "npm run build && npm start"
   },
