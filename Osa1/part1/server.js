@@ -105,11 +105,8 @@ app.post('/api/notes', (request, response) => {
   response.json(note)
 })
 
-
-const unknownEndpoint = (request, response) => {
-  response.status(404).send({ error: 'unknown endpoint' })
-}
-
+// Serve static files from the React app build directory
+app.use(express.static(path.join(__dirname, 'dist')))
 
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
