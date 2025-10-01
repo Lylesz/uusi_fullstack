@@ -6,6 +6,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cors())
+app.use(express.static('dist'))
 
 const requestLogger = (request, response, next) => {
   console.log('Method:', request.method)
@@ -56,7 +57,7 @@ app.put('/api/notes/:id', (request, response) => {
   const body = request.body
   
   const noteIndex = notes.findIndex(note => note.id === id)
-  
+ 
   if (noteIndex === -1) {
     return response.status(404).json({ error: 'note not found' })
   }
