@@ -113,18 +113,6 @@ app.get('/test', (req, res) => {
 // Serve static files from the React app build directory
 app.use(express.static(path.join(__dirname, 'dist')))
 
-// Fallback route for React SPA
-app.get('*', (req, res) => {
-  const indexPath = path.join(__dirname, 'dist', 'index.html')
-  console.log('Trying to serve:', indexPath)
-  res.sendFile(indexPath, (err) => {
-    if (err) {
-      console.error('Error serving index.html:', err)
-      res.status(500).send('Error: React app not built. Run npm run build first.')
-    }
-  })
-})
-
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
