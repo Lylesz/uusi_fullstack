@@ -1,0 +1,41 @@
+### Get all blogs
+GET http://localhost:3003/api/blogs
+
+###
+
+### Create a new blog
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+  "title": "My First Blog Post",
+  "author": "John Doe",
+  "url": "https://example.com/my-first-blog",
+  "likes": 0
+}
+
+###
+
+### Create another blog
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+  "title": "Learning Node.js",
+  "author": "Jane Smith", 
+  "url": "https://example.com/learning-nodejs",
+  "likes": 15
+}
+
+###
+
+### Create a blog with more likes
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+  "title": "Advanced Express Patterns",
+  "author": "Mike Johnson",
+  "url": "https://example.com/advanced-express",
+  "likes": 42
+}
